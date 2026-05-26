@@ -17,7 +17,7 @@ const { Content } = await render(post);
 <Layout title={post.data.title} description={post.data.description}>
   <article class="section">
     <div class="section-inner article-inner">
-      <a href="/blog" class="back-link">&larr; Blog</a>
+      <a href={`${import.meta.env.BASE_URL}blog`} class="back-link">&larr; Blog</a>
       <div class="article-header">
         <div class="article-meta">
           <time datetime={post.data.date}>{post.data.date}</time>

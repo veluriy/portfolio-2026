@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { title, description = "Portfolio" } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -20,18 +21,18 @@ const { title, description = "Portfolio" } = Astro.props;
   <body>
     <header class="site-header">
       <nav>
-        <a href="/" class="logo">
+        <a href={`${base}/`} class="logo">
           <img src="https://avatars.githubusercontent.com/u/64892129?v=4" alt="Avatar" width="36" height="36" />
           <span>Portfolio</span>
         </a>
 
         <!-- Desktop nav -->
         <ul class="nav-desktop">
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#skills">Skills</a></li>
-          <li><a href="/#projects">Projects</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href={`${base}/#about`}>About</a></li>
+          <li><a href={`${base}/#skills`}>Skills</a></li>
+          <li><a href={`${base}/#projects`}>Projects</a></li>
+          <li><a href={`${base}/blog`}>Blog</a></li>
+          <li><a href={`${base}/#contact`}>Contact</a></li>
         </ul>
 
         <!-- Hamburger button (Invoker Commands API) -->
@@ -44,13 +45,13 @@ const { title, description = "Portfolio" } = Astro.props;
         <!-- Pulldown menu (Popover API) -->
         <div id="nav-menu" popover class="nav-pulldown">
           <ul>
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#education">Education</a></li>
-            <li><a href="/#internship">Internship</a></li>
-            <li><a href="/#skills">Skills</a></li>
-            <li><a href="/#projects">Projects</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/#contact">Contact</a></li>
+            <li><a href={`${base}/#about`}>About</a></li>
+            <li><a href={`${base}/#education`}>Education</a></li>
+            <li><a href={`${base}/#internship`}>Internship</a></li>
+            <li><a href={`${base}/#skills`}>Skills</a></li>
+            <li><a href={`${base}/#projects`}>Projects</a></li>
+            <li><a href={`${base}/blog`}>Blog</a></li>
+            <li><a href={`${base}/#contact`}>Contact</a></li>
           </ul>
         </div>
       </nav>

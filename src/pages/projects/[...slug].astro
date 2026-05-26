@@ -17,7 +17,7 @@ const { Content } = await render(project);
 <Layout title={project.data.title} description={project.data.description}>
   <article class="section">
     <div class="section-inner article-inner">
-      <a href="/#projects" class="back-link">&larr; Projects</a>
+      <a href={`${import.meta.env.BASE_URL}#projects`} class="back-link">&larr; Projects</a>
       <div class="article-header">
         <span class="project-tag">{project.data.tag}</span>
         <h1 class="article-title">{project.data.title}</h1>
