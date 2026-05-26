@@ -12,6 +12,7 @@ import {
 } from "../data/profile";
 
 const projects = await getCollection("projects");
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout title="Portfolio" description="My portfolio site">
@@ -147,7 +148,7 @@ const projects = await getCollection("projects");
       <p class="section-subtitle">これまでの制作物</p>
       <div class="projects-grid">
         {projects.map((project) => (
-          <a href={`${import.meta.env.BASE_URL}projects/${project.id}`} class="project-card">
+          <a href={`${base}/projects/${project.id}`} class="project-card">
             <div class="project-tag">{project.data.tag}</div>
             <h3 class="project-name">{project.data.title}</h3>
             <p class="project-desc">{project.data.description}</p>
